@@ -2,8 +2,8 @@
 
 Interesting:
 
-1) Nacitanie search_stranky sa lisi. V pripade, ze je kliknute Search button sa HTML kod zmeni ! 
-  -> before: napr. code_count is in <inframe>/after: no <inframe> - info on page itself
+1) Difference in page loading. HTML changes if Search button is clicked ! 
+  -> before:  code_count,issues etc. is in <inframe>/after: no <inframe> - info on page itself
   
 Implemented:
 
