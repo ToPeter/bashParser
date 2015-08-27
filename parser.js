@@ -1,19 +1,11 @@
-var htmlparser = require("htmlparser2");
- 
- 
- 
-process.stdin.pipe(new htmlparser.WritableStream({
-                onopentag : function(tagname, attribs) {
-                	
-                             if (tagname === "a") {
-								
-								console.log(attribs.href);
-                             } 
-                         }
+var fs = require('fs');
+var cheerio = require('cheerio')
+var cheerioAdv = require('cheerio-advanced-selectors')
 
-                ontext: function(text){
-        					console.log("-->", text);           
-                               
-                }
+// INSTALL : npm install cheerio-advanced-selectors
 
-                }));
+cheerio = cheerioAdv.wrap(cheerio)
+var $ = cheerio.load(fs.readFileSync('/dev/stdin').toString())
+
+console.log($('nav').text());
+
